@@ -18,6 +18,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var word: UITextField!
     
+    @IBAction func checkButton(_ sender: Any) {
+        checkWord()
+    }
     @IBAction func writeWord(_ sender: Any) {
     
         func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -84,6 +87,7 @@ class ViewController: UIViewController {
                 } else {
                     incorrectWords += 1
                     //printContent("Incorrect!")
+                    
                 }
             }
     
