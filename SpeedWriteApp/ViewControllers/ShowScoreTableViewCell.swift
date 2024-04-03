@@ -8,6 +8,10 @@
 import UIKit
 
 class ShowScoreTableViewCell: UITableViewCell {
+    
+    var correctWords: Int = 0
+    var incorrectWords: Int = 0
+    var totalWords: Int = 0
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -16,7 +20,9 @@ class ShowScoreTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
+        //update the labels for the scores: correctWords, incorrectWords, and wordsPerMinute/totalWords*60
+       
         // Configure the view for the selected state
     }
     

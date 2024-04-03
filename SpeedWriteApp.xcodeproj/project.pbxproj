@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		CE4922A82BB580F700BBF129 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4922A72BB580F700BBF129 /* AppDelegate.swift */; };
 		CE4922AA2BB580F700BBF129 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4922A92BB580F700BBF129 /* SceneDelegate.swift */; };
-		CE4922AC2BB580F700BBF129 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4922AB2BB580F700BBF129 /* ViewController.swift */; };
+		CE4922AC2BB580F700BBF129 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4922AB2BB580F700BBF129 /* GameViewController.swift */; };
 		CE4922AF2BB580F700BBF129 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = CE4922AE2BB580F700BBF129 /* Base */; };
 		CE4922B22BB580F700BBF129 /* SpeedWriteApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE4922B02BB580F700BBF129 /* SpeedWriteApp.xcdatamodeld */; };
 		CE4922B42BB580F900BBF129 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE4922B32BB580F900BBF129 /* Assets.xcassets */; };
@@ -17,6 +17,8 @@
 		CE4922C22BB580F900BBF129 /* SpeedWriteAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4922C12BB580F900BBF129 /* SpeedWriteAppTests.swift */; };
 		CE4922CC2BB580F900BBF129 /* SpeedWriteAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4922CB2BB580F900BBF129 /* SpeedWriteAppUITests.swift */; };
 		CE4922CE2BB580F900BBF129 /* SpeedWriteAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4922CD2BB580F900BBF129 /* SpeedWriteAppUITestsLaunchTests.swift */; };
+		CE4922DC2BB5AFD500BBF129 /* ShowScoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4922DB2BB5AFD500BBF129 /* ShowScoreTableViewCell.xib */; };
+		CE4922DD2BB5AFD500BBF129 /* ShowScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4922DA2BB5AFD500BBF129 /* ShowScoreTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +42,7 @@
 		CE4922A42BB580F700BBF129 /* SpeedWriteApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeedWriteApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE4922A72BB580F700BBF129 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE4922A92BB580F700BBF129 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CE4922AB2BB580F700BBF129 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CE4922AB2BB580F700BBF129 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		CE4922AE2BB580F700BBF129 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE4922B12BB580F700BBF129 /* SpeedWriteApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SpeedWriteApp.xcdatamodel; sourceTree = "<group>"; };
 		CE4922B32BB580F900BBF129 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +53,8 @@
 		CE4922C72BB580F900BBF129 /* SpeedWriteAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpeedWriteAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE4922CB2BB580F900BBF129 /* SpeedWriteAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedWriteAppUITests.swift; sourceTree = "<group>"; };
 		CE4922CD2BB580F900BBF129 /* SpeedWriteAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedWriteAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CE4922DA2BB5AFD500BBF129 /* ShowScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowScoreTableViewCell.swift; sourceTree = "<group>"; };
+		CE4922DB2BB5AFD500BBF129 /* ShowScoreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowScoreTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,14 +105,15 @@
 		CE4922A62BB580F700BBF129 /* SpeedWriteApp */ = {
 			isa = PBXGroup;
 			children = (
+				CE4922DE2BB5B74D00BBF129 /* ViewControllers */,
 				CE4922A72BB580F700BBF129 /* AppDelegate.swift */,
 				CE4922A92BB580F700BBF129 /* SceneDelegate.swift */,
-				CE4922AB2BB580F700BBF129 /* ViewController.swift */,
 				CE4922AD2BB580F700BBF129 /* Main.storyboard */,
 				CE4922B32BB580F900BBF129 /* Assets.xcassets */,
 				CE4922B52BB580F900BBF129 /* LaunchScreen.storyboard */,
 				CE4922B82BB580F900BBF129 /* Info.plist */,
 				CE4922B02BB580F700BBF129 /* SpeedWriteApp.xcdatamodeld */,
+				CE4922DB2BB5AFD500BBF129 /* ShowScoreTableViewCell.xib */,
 			);
 			path = SpeedWriteApp;
 			sourceTree = "<group>";
@@ -128,6 +133,15 @@
 				CE4922CD2BB580F900BBF129 /* SpeedWriteAppUITestsLaunchTests.swift */,
 			);
 			path = SpeedWriteAppUITests;
+			sourceTree = "<group>";
+		};
+		CE4922DE2BB5B74D00BBF129 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CE4922AB2BB580F700BBF129 /* GameViewController.swift */,
+				CE4922DA2BB5AFD500BBF129 /* ShowScoreTableViewCell.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,6 +251,7 @@
 				CE4922B42BB580F900BBF129 /* Assets.xcassets in Resources */,
 				CE4922B72BB580F900BBF129 /* Base in Resources */,
 				CE4922AF2BB580F700BBF129 /* Base in Resources */,
+				CE4922DC2BB5AFD500BBF129 /* ShowScoreTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,7 +276,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE4922AC2BB580F700BBF129 /* ViewController.swift in Sources */,
+				CE4922DD2BB5AFD500BBF129 /* ShowScoreTableViewCell.swift in Sources */,
+				CE4922AC2BB580F700BBF129 /* GameViewController.swift in Sources */,
 				CE4922A82BB580F700BBF129 /* AppDelegate.swift in Sources */,
 				CE4922AA2BB580F700BBF129 /* SceneDelegate.swift in Sources */,
 				CE4922B22BB580F700BBF129 /* SpeedWriteApp.xcdatamodeld in Sources */,
