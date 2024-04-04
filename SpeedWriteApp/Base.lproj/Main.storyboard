@@ -87,8 +87,8 @@
                                     <constraint firstAttribute="width" constant="403" id="8Uh-re-xAt"/>
                                 </constraints>
                             </imageView>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ceb-72-bNr">
-                                <rect key="frame" x="28" y="222" width="336" height="4"/>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ceb-72-bNr">
+                                <rect key="frame" x="28" y="221.00000000000003" width="336" height="5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </progressView>
                         </subviews>

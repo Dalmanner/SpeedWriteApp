@@ -71,8 +71,14 @@ class ViewController: UIViewController {
             timer.invalidate()
             countDown.textColor = UIColor.red
             wordToType.textColor = UIColor.red
-            
             wordToType.text = "Game Over!"
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                self.wordToType.textColor = UIColor.green
+                self.wordToType.text = "Lets see how you did! :) "
+            }
+            
+            timeLeftProgressBar.progressTintColor = UIColor.red
+            timeLeftProgressBar.progress = 100.0
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
                 self.performSegue(withIdentifier: "showScoreSegue", sender: self)}
