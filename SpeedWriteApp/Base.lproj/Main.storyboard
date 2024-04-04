@@ -87,6 +87,10 @@
                                     <constraint firstAttribute="width" constant="403" id="8Uh-re-xAt"/>
                                 </constraints>
                             </imageView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ceb-72-bNr">
+                                <rect key="frame" x="28" y="222" width="336" height="4"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <constraints>
@@ -122,6 +126,7 @@
                     <connections>
                         <outlet property="countDown" destination="qQ7-Fh-Wka" id="ode-YD-T9J"/>
                         <outlet property="restart" destination="dok-vO-uOj" id="Jwy-HR-Cmn"/>
+                        <outlet property="timeLeftProgressBar" destination="ceb-72-bNr" id="xs2-tb-K0k"/>
                         <outlet property="word" destination="ehI-xY-htg" id="q0A-x7-p3X"/>
                         <outlet property="wordToType" destination="Odk-U6-LNA" id="Ecr-Ud-4X2"/>
                     </connections>

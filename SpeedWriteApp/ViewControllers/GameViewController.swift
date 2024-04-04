@@ -12,6 +12,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var wordToType: UILabel!
     
+    @IBOutlet weak var timeLeftProgressBar: UIProgressView!
+    
     @IBOutlet weak var restart: UINavigationItem!
     
     @IBOutlet weak var countDown: UILabel!
@@ -61,12 +63,20 @@ class ViewController: UIViewController {
         if timeLeft > 0 {
             timeLeft -= 1
             countDown.text = String(timeLeft)
+            timeLeftProgressBar.progressTintColor = UIColor.green
+            timeLeftProgressBar.progress = Float(timeLeft) / 60
+            
         } else {
-            countDown.textColor = UIColor.red
+            
             timer.invalidate()
+            countDown.textColor = UIColor.red
+            wordToType.textColor = UIColor.red
+            
             wordToType.text = "Game Over!"
-            //go to showScoreSegue:
-            performSegue(withIdentifier: "showScoreSegue", sender: self)
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                self.performSegue(withIdentifier: "showScoreSegue", sender: self)}
+            
         }
     }
     
