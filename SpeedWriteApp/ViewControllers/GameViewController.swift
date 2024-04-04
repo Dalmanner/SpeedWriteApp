@@ -62,8 +62,10 @@ class ViewController: UIViewController {
             timeLeft -= 1
             countDown.text = String(timeLeft)
         } else {
+            countDown.textColor = UIColor.red
             timer.invalidate()
             wordToType.text = "Game Over!"
+            
         }
     }
     
@@ -73,7 +75,7 @@ class ViewController: UIViewController {
         timeLeft = 60
         correctWords = 0
         incorrectWords = 0
-        wordToType.text = ""
+        wordToType.text = "Press start to begin!"
         word.text = ""
         countDown.text = "60"
         
@@ -82,12 +84,19 @@ class ViewController: UIViewController {
     func checkWord() {
                 if word.text == wordToType.text {
                     correctWords += 1
+                    word.backgroundColor = UIColor.green
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        self.word.backgroundColor = UIColor.white
+                    }
                     wordToType.text = words.randomElement()
                     word.text = ""
                 } else {
                     incorrectWords += 1
-                    //printContent("Incorrect!")
-                    
+                    word.backgroundColor = UIColor.red
+                    //wait 1 second:
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        self.word.backgroundColor = UIColor.white
+                    }
                 }
             }
     
@@ -108,16 +117,14 @@ class ViewController: UIViewController {
         
         wordsPerMinuteCalculator().self
         
-        //if enterpressed, check if word is correct
-        /*if enterPressed() {
-            checkWord()
-        }*/
-        
         checkWord()
         
         if timeLeft == 0 {
             timer.invalidate()
+            wordToType.textColor = UIColor.red
             wordToType.text = "Game Over!"
+        } else {
+            wordToType.textColor = UIColor.blue
         }
     }
 
@@ -140,7 +147,5 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
     }
-
-
 }
 
