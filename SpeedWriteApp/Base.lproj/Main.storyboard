@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Odk-U6-LNA">
-                                <rect key="frame" x="40" y="123.00000000000001" width="313" height="163.33333333333337"/>
+                                <rect key="frame" x="28" y="123.00000000000001" width="325" height="163.33333333333337"/>
                                 <string key="text">Welcome!
 
 You have a total of 60 seconds to type as many words as possible shown on the screen.
@@ -31,7 +31,6 @@ Start by pressing the button!</string>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Word" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ehI-xY-htg">
                                 <rect key="frame" x="16" y="462.66666666666669" width="278" height="35"/>
-
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" keyboardKey="YES"/>
                                 </accessibility>
@@ -45,12 +44,10 @@ Start by pressing the button!</string>
                                 <rect key="frame" x="152" y="341.66666666666669" width="89" height="60"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
                                 <color key="textColor" name="AccentColor"/>
-
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gcq-uL-bin">
                                 <rect key="frame" x="303" y="462.66666666666669" width="73" height="35"/>
-
                                 <color key="tintColor" systemColor="systemGreenColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Check"/>
@@ -66,22 +63,19 @@ Start by pressing the button!</string>
                                     <action selector="startButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zUn-3d-UcA"/>
                                 </connections>
                             </button>
-
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qQ7-Fh-Wka" secondAttribute="trailing" constant="152" id="3rW-p1-i7O"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Odk-U6-LNA" secondAttribute="trailing" constant="40" id="76P-Hi-fp6"/>
-
                             <constraint firstItem="gcq-uL-bin" firstAttribute="top" secondItem="ehI-xY-htg" secondAttribute="top" id="Ebg-7X-u32"/>
                             <constraint firstItem="qQ7-Fh-Wka" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="152" id="HaS-bb-obv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ehI-xY-htg" secondAttribute="trailing" constant="99" id="NGR-EJ-pIC"/>
                             <constraint firstItem="Odk-U6-LNA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="28" id="PQX-Rd-ihC"/>
                             <constraint firstItem="ehI-xY-htg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ShG-Vt-aVz"/>
-                            <constraint firstItem="nmO-oZ-RHu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="-278" id="WBJ-WC-LEN"/>
                             <constraint firstItem="gcq-uL-bin" firstAttribute="centerY" secondItem="ehI-xY-htg" secondAttribute="centerY" id="XBb-DP-X6x"/>
                             <constraint firstItem="gcq-uL-bin" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ehI-xY-htg" secondAttribute="trailing" constant="8" symbolic="YES" id="abI-A7-nQ1"/>
-                            <constraint firstAttribute="trailing" secondItem="nmO-oZ-RHu" secondAttribute="trailing" constant="-393" id="bRs-hc-DHd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Xrg-ed-ZgC" secondAttribute="trailing" constant="159" id="cVU-Ji-VGF"/>
                             <constraint firstItem="Xrg-ed-ZgC" firstAttribute="top" secondItem="ehI-xY-htg" secondAttribute="bottom" constant="35.329999999999998" id="dPt-qU-S9P"/>
                             <constraint firstItem="Xrg-ed-ZgC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="159" id="ja5-xZ-9GF"/>
@@ -89,10 +83,9 @@ Start by pressing the button!</string>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Xrg-ed-ZgC" secondAttribute="bottom" constant="250" id="tez-Vv-Zrk"/>
                             <constraint firstItem="ehI-xY-htg" firstAttribute="top" secondItem="qQ7-Fh-Wka" secondAttribute="bottom" constant="61" id="udj-is-MJv"/>
                             <constraint firstItem="Odk-U6-LNA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="yRX-hn-Xqf"/>
-
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="*GAME*" id="dok-vO-uOj">
+                    <navigationItem key="navigationItem" title="GAME" id="dok-vO-uOj">
                         <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="zwE-T3-bdR">
                             <color key="tintColor" systemColor="systemGroupedBackgroundColor"/>
                             <connections>
@@ -210,24 +203,17 @@ Start by pressing the button!</string>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGroupedBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemPurpleColor">
-            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
