@@ -109,9 +109,9 @@ class ViewController: UIViewController {
         wordsPerMinuteCalculator().self
         
         //if enterpressed, check if word is correct
-        if enterPressed() {
+        /*if enterPressed() {
             checkWord()
-        }
+        }*/
         
         checkWord()
         
