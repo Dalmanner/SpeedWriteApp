@@ -9,7 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    var player: Player?
+    
     @IBOutlet weak var wordToType: UILabel!
     
     @IBOutlet weak var restart: UINavigationItem!
@@ -22,7 +24,7 @@ class ViewController: UIViewController {
         checkWord()
     }
     @IBAction func writeWord(_ sender: Any) {
-    
+        
         func textFieldShouldReturn(_ textField: UITextField) -> Bool {
             word.resignFirstResponder()
             return true
@@ -80,16 +82,16 @@ class ViewController: UIViewController {
     }
     
     func checkWord() {
-                if word.text == wordToType.text {
-                    correctWords += 1
-                    wordToType.text = words.randomElement()
-                    word.text = ""
-                } else {
-                    incorrectWords += 1
-                    //printContent("Incorrect!")
-                    
-                }
-            }
+        if word.text == wordToType.text {
+            correctWords += 1
+            wordToType.text = words.randomElement()
+            word.text = ""
+        } else {
+            incorrectWords += 1
+            //printContent("Incorrect!")
+            
+        }
+    }
     
     
     func enterPressed() -> Bool {
@@ -110,8 +112,8 @@ class ViewController: UIViewController {
         
         //if enterpressed, check if word is correct
         /*if enterPressed() {
-            checkWord()
-        }*/
+         checkWord()
+         }*/
         
         checkWord()
         
@@ -120,7 +122,7 @@ class ViewController: UIViewController {
             wordToType.text = "Game Over!"
         }
     }
-
+    
     var timer = Timer()
     
     var timeLeft = 60
@@ -139,8 +141,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if let player = player {
+            print("Spelarens namn: \(player.name), poäng: \(player.score)"
+                  
+            )
+            
+        }
+        
+        
     }
-
-
+    
 }
-
