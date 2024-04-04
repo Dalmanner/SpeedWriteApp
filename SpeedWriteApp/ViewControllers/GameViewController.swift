@@ -123,6 +123,7 @@ class ViewController: UIViewController {
             timer.invalidate()
             wordToType.textColor = UIColor.red
             wordToType.text = "Game Over!"
+            
         } else {
             wordToType.textColor = UIColor.blue
         }

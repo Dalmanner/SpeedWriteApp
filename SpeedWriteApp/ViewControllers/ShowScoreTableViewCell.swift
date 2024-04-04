@@ -22,6 +22,8 @@ class ShowScoreTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         
         //update the labels for the scores: correctWords, incorrectWords, and wordsPerMinute/totalWords*60
+        
+        
        
         // Configure the view for the selected state
     }
