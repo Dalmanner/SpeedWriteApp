@@ -9,13 +9,13 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var table: UITableView!
+    
 
     @IBOutlet weak var wordToType: UILabel!
-    
     @IBOutlet weak var restart: UINavigationItem!
-    
     @IBOutlet weak var countDown: UILabel!
-    
     @IBOutlet weak var word: UITextField!
     
     @IBAction func checkButton(_ sender: Any) {
@@ -138,6 +138,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
         
     }
 
