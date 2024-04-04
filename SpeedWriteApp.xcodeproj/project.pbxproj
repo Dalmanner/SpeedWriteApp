@@ -19,6 +19,7 @@
 		CE4922CE2BB580F900BBF129 /* SpeedWriteAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4922CD2BB580F900BBF129 /* SpeedWriteAppUITestsLaunchTests.swift */; };
 		CE4922DC2BB5AFD500BBF129 /* ShowScoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4922DB2BB5AFD500BBF129 /* ShowScoreTableViewCell.xib */; };
 		CE4922DD2BB5AFD500BBF129 /* ShowScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4922DA2BB5AFD500BBF129 /* ShowScoreTableViewCell.swift */; };
+		E348760A2BBD8D7400836193 /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34876092BBD8D7400836193 /* PlayerModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		CE4922CD2BB580F900BBF129 /* SpeedWriteAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedWriteAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CE4922DA2BB5AFD500BBF129 /* ShowScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowScoreTableViewCell.swift; sourceTree = "<group>"; };
 		CE4922DB2BB5AFD500BBF129 /* ShowScoreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowScoreTableViewCell.xib; sourceTree = "<group>"; };
+		E34876092BBD8D7400836193 /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 		CE4922A62BB580F700BBF129 /* SpeedWriteApp */ = {
 			isa = PBXGroup;
 			children = (
+				E34876082BBD8D2A00836193 /* Players */,
 				CE4922DE2BB5B74D00BBF129 /* ViewControllers */,
 				CE4922A72BB580F700BBF129 /* AppDelegate.swift */,
 				CE4922A92BB580F700BBF129 /* SceneDelegate.swift */,
@@ -142,6 +145,14 @@
 				CE4922DA2BB5AFD500BBF129 /* ShowScoreTableViewCell.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E34876082BBD8D2A00836193 /* Players */ = {
+			isa = PBXGroup;
+			children = (
+				E34876092BBD8D7400836193 /* PlayerModel.swift */,
+			);
+			path = Players;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,6 +291,7 @@
 				CE4922AC2BB580F700BBF129 /* GameViewController.swift in Sources */,
 				CE4922A82BB580F700BBF129 /* AppDelegate.swift in Sources */,
 				CE4922AA2BB580F700BBF129 /* SceneDelegate.swift in Sources */,
+				E348760A2BBD8D7400836193 /* PlayerModel.swift in Sources */,
 				CE4922B22BB580F700BBF129 /* SpeedWriteApp.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
