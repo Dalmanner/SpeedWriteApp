@@ -65,7 +65,8 @@ class ViewController: UIViewController {
             countDown.textColor = UIColor.red
             timer.invalidate()
             wordToType.text = "Game Over!"
-            
+            //go to showScoreSegue:
+            performSegue(withIdentifier: "showScoreSegue", sender: self)
         }
     }
     
