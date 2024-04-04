@@ -93,7 +93,7 @@ Start by pressing the button!</string>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Score" id="ECj-u4-ZBz">
-                            <color key="tintColor" systemColor="secondarySystemBackgroundColor"/>
+                            <color key="tintColor" systemColor="placeholderTextColor"/>
                             <connections>
                                 <segue destination="6ju-rG-veX" kind="show" identifier="showScoreSegue" id="1Vi-gF-Vev"/>
                             </connections>
@@ -185,8 +185,8 @@ Start by pressing the button!</string>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="secondarySystemBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="placeholderTextColor">
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29803921570000003" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
