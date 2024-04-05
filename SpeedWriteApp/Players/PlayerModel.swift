@@ -15,8 +15,8 @@ class Player: Codable{
         self.name = "Player"
         self.score = 0
     }
-    init(name: String) {
+    init(name: String, score: Int = 0) {
         self.name = name
-        self.score = 0
+        self.score = score
     }
 }

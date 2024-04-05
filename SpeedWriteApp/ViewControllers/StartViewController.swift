@@ -13,17 +13,17 @@ class StartViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+        
         
     }
     
     
     @IBAction func nextButtonClicked (_ sender: UIButton) {
-        
         guard let playerName = nameTextField.text, !playerName.isEmpty else {
             print("Please write a name to start the game!")
             return
         }
-        
         performSegue(withIdentifier: "toGameViewController", sender: playerName)
         
     }
@@ -34,11 +34,13 @@ class StartViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toGameViewController", let gameVC = segue.destination as? ViewController {
             
-            let newPlayer = Player(name: "spelarens namn")
-            gameVC.player = newPlayer
-           
-                }
+            if let playerName = sender as? String {
+                gameVC.playerName = playerName
             }
         }
-   // }
-//}
+    }
+    
+    
+}
+ 
+
