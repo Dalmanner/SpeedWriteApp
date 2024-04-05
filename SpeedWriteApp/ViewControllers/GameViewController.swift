@@ -11,14 +11,34 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var table: UITableView!
-    
-
-    var player: Player?
-    
+    @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var wordToType: UILabel!
     @IBOutlet weak var restart: UINavigationItem!
     @IBOutlet weak var countDown: UILabel!
     @IBOutlet weak var word: UITextField!
+    
+    var playerName: String?
+    var timer = Timer()
+    var timeLeft = 60
+    var incorrectWords = 0
+    var correctWords = 0
+    var words = ["hello", "world", "swift", "apple", "iphone", "ipad", "macbook", "airpods", "watch", "tv", "homepod", "imac", "macpro", "macmini", "ipod", "touch", "mini", "pro", "max", "mini", "air", "retina", "display", "keyboard", "mouse", "trackpad", "magic", "pencil", "smart", "battery", "life", "fast", "powerful", "light", "thin", "beautiful", "design", "innovative", "technology", "best", "product", "ever", "made", "by"]
+    
+    
+    var scoreManager = ScoreManager()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    
+        if let playerName = playerName {
+            nameTextField.text = playerName
+        }
+    }
+    
+    
+    @IBAction func startButton(_ sender: UIButton) {
+        startGame()
+    }
     
     @IBAction func checkButton(_ sender: Any) {
         checkWord()
@@ -27,9 +47,106 @@ class ViewController: UIViewController {
         
         func textFieldShouldReturn(_ textField: UITextField) -> Bool {
             word.resignFirstResponder()
+           // return true
+        }
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+           if segue.identifier == "toGameViewController", let gameVC = segue.destination as? ViewController {
+               if let playerName = nameTextField.text, !playerName.isEmpty {
+                   let newPlayer = Player(name: playerName)
+                   gameVC.playerName = playerName
+               }
+           }
+       }
+    
+    
+    func startGame() {
+        
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+        
+        wordToType.text = words.randomElement()
+        
+        //wordsPerMinuteCalculator().self
+        
+        //if enterpressed, check if word is correct
+        /*if enterPressed() {
+         checkWord()
+         }*/
+        
+        checkWord()
+        
+        if timeLeft == 0 {
+            timer.invalidate()
+            wordToType.text = "Game Over!"
+        }
+    }
+    
+    @objc func updateTimer() {
+        if timeLeft > 0 {
+            timeLeft -= 1
+            countDown.text = String(timeLeft)
+        } else {
+            timer.invalidate()
+            wordToType.text = "Game Over!"
+            gameOver()
+        }
+    }
+    
+    func gameOver() {
+        guard let playerName = nameTextField?.text, !playerName.isEmpty else {
+            print("Player name is empty or nil")
+            return
+        }
+        let newScore = calculateScore(correctWords: correctWords, timeLeft: timeLeft)
+        let player = Player(name: playerName, score: newScore)
+        scoreManager.addPlayer(player)
+        scoreManager.saveHighscores()
+    }
+     
+    
+    func checkWord() {
+        if word.text == wordToType.text {
+            correctWords += 1
+            wordToType.text = words.randomElement()
+            word.text = ""
+        } else {
+            incorrectWords += 1
+        }
+    }
+        
+    
+    func calculateScore(correctWords: Int, timeLeft: Int) -> Int {
+           let pointsPerWord = 10
+           let correctWordsScore = correctWords * pointsPerWord
+           let timeScore = timeLeft
+           let totalScore = correctWordsScore + timeScore
+           return totalScore
+       }
+    
+    @IBAction func restartGame(_ sender: Any) {
+        
+        timer.invalidate()
+        timeLeft = 60
+        correctWords = 0
+        incorrectWords = 0
+        wordToType.text = ""
+        word.text = ""
+        countDown.text = "60"
+    }
+    
+    
+    func enterPressed() -> Bool {
+        if word.text == "" {
+            return false
+        } else {
             return true
         }
     }
+    
+    
+    
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let text = word.text!
@@ -59,96 +176,6 @@ class ViewController: UIViewController {
     
     
     
-    @objc func updateTimer() {
-        if timeLeft > 0 {
-            timeLeft -= 1
-            countDown.text = String(timeLeft)
-        } else {
-            timer.invalidate()
-            wordToType.text = "Game Over!"
-        }
-    }
     
-    @IBAction func restartGame(_ sender: Any) {
-        
-        timer.invalidate()
-        timeLeft = 60
-        correctWords = 0
-        incorrectWords = 0
-        wordToType.text = ""
-        word.text = ""
-        countDown.text = "60"
-        
-    }
-    
-    func checkWord() {
-        if word.text == wordToType.text {
-            correctWords += 1
-            wordToType.text = words.randomElement()
-            word.text = ""
-        } else {
-            incorrectWords += 1
-            //printContent("Incorrect!")
-            
-        }
-    }
-    
-    
-    func enterPressed() -> Bool {
-        if word.text == "" {
-            return false
-        } else {
-            return true
-        }
-    }
-    
-    func startGame() {
-        
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
-        
-        wordToType.text = words.randomElement()
-        
-        wordsPerMinuteCalculator().self
-        
-        //if enterpressed, check if word is correct
-        /*if enterPressed() {
-         checkWord()
-         }*/
-        
-        checkWord()
-        
-        if timeLeft == 0 {
-            timer.invalidate()
-            wordToType.text = "Game Over!"
-        }
-    }
-    
-    var timer = Timer()
-    
-    var timeLeft = 60
-    
-    var incorrectWords = 0
-    
-    var correctWords = 0
-    
-    var words = ["hello", "world", "swift", "apple", "iphone", "ipad", "macbook", "airpods", "watch", "tv", "homepod", "imac", "macpro", "macmini", "ipod", "touch", "mini", "pro", "max", "mini", "air", "retina", "display", "keyboard", "mouse", "trackpad", "magic", "pencil", "smart", "battery", "life", "fast", "powerful", "light", "thin", "beautiful", "design", "innovative", "technology", "best", "product", "ever", "made", "by"]
-    
-    
-    @IBAction func startButton(_ sender: UIButton) {
-        startGame()
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    
-        
-        if let player = player {
-            print("Spelarens namn: \(player.name), poäng: \(player.score)"
-            )
-            
-        }
-        
-        
-    }
     
 }

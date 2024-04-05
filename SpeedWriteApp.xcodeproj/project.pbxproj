@@ -10,6 +10,7 @@
 		86ED4E082BBEB3AD009ED812 /* ScoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86ED4E072BBEB3AD009ED812 /* ScoreTableViewController.swift */; };
 		86ED4E0A2BBEC71A009ED812 /* HighScoreList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86ED4E092BBEC71A009ED812 /* HighScoreList.swift */; };
 		86ED4E0C2BBEE5C0009ED812 /* CustomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86ED4E0B2BBEE5C0009ED812 /* CustomeTableViewCell.swift */; };
+		86ED4E0E2BBFF0DF009ED812 /* ScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86ED4E0D2BBFF0DF009ED812 /* ScoreManager.swift */; };
 		9A95CE332BBEDE99004DA5C9 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A95CE322BBEDE99004DA5C9 /* StartViewController.swift */; };
 		CE4922A82BB580F700BBF129 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4922A72BB580F700BBF129 /* AppDelegate.swift */; };
 		CE4922AA2BB580F700BBF129 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4922A92BB580F700BBF129 /* SceneDelegate.swift */; };
@@ -47,6 +48,7 @@
 		86ED4E072BBEB3AD009ED812 /* ScoreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTableViewController.swift; sourceTree = "<group>"; };
 		86ED4E092BBEC71A009ED812 /* HighScoreList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreList.swift; sourceTree = "<group>"; };
 		86ED4E0B2BBEE5C0009ED812 /* CustomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomeTableViewCell.swift; sourceTree = "<group>"; };
+		86ED4E0D2BBFF0DF009ED812 /* ScoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreManager.swift; sourceTree = "<group>"; };
 		9A95CE322BBEDE99004DA5C9 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		CE4922A42BB580F700BBF129 /* SpeedWriteApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeedWriteApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE4922A72BB580F700BBF129 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				CE4922A92BB580F700BBF129 /* SceneDelegate.swift */,
 				86ED4E092BBEC71A009ED812 /* HighScoreList.swift */,
 				86ED4E0B2BBEE5C0009ED812 /* CustomeTableViewCell.swift */,
+				86ED4E0D2BBFF0DF009ED812 /* ScoreManager.swift */,
 				CE4922AD2BB580F700BBF129 /* Main.storyboard */,
 				CE4922B32BB580F900BBF129 /* Assets.xcassets */,
 				CE4922B52BB580F900BBF129 /* LaunchScreen.storyboard */,
@@ -308,6 +311,7 @@
 				E348760A2BBD8D7400836193 /* PlayerModel.swift in Sources */,
 				CE4922B22BB580F700BBF129 /* SpeedWriteApp.xcdatamodeld in Sources */,
 				86ED4E0A2BBEC71A009ED812 /* HighScoreList.swift in Sources */,
+				86ED4E0E2BBFF0DF009ED812 /* ScoreManager.swift in Sources */,
 				86ED4E082BBEB3AD009ED812 /* ScoreTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

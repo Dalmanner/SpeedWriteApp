@@ -9,13 +9,24 @@ import UIKit
 
 class ScoreTableViewController: UITableViewController {
     
+    var scoreManager = ScoreManager()
     
-    var highScoreList = HighScoreList()
+  //  var highScoreList = HighScoreList()
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        //TESTKOD
+        let player1 = Player(name: "Player 1", score: 100)
+            scoreManager.addPlayer(player1)
+            scoreManager.saveHighscores()
+        //SLUT PÅ TESTKOD
+        
+        scoreManager.loadHighscores()
+        print(scoreManager.highscores)
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -29,15 +40,12 @@ class ScoreTableViewController: UITableViewController {
         return 1
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return highScoreList.count
+    /*override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+         #warning Incomplete implementation, return the number of rows
+    return highScoreList.count
     }
 
-   
-    
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "scoreCell", for: indexPath) as! CustomeTableViewCell
         
         if let player = highScoreList.player(index: indexPath.row){
@@ -45,7 +53,22 @@ class ScoreTableViewController: UITableViewController {
             cell.label.text = String(player.score)
         }
         return cell
+    }*/
+    
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return scoreManager.highscores.count
     }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "scoreCell", for: indexPath) as! CustomeTableViewCell
+            
+            let player = scoreManager.highscores[indexPath.row]
+            cell.nameLabel.text = player.name
+            cell.label.text = String(player.score)
+            
+            return cell
+        }
     
 
     /*
