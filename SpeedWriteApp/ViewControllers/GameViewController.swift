@@ -15,7 +15,10 @@ class ViewController: UIViewController {
 
     var player: Player?
     
+    @IBOutlet weak var timeLeftProgressBar: UIProgressView!
+    
     @IBOutlet weak var wordToType: UILabel!
+
     @IBOutlet weak var restart: UINavigationItem!
     @IBOutlet weak var countDown: UILabel!
     @IBOutlet weak var word: UITextField!
@@ -63,9 +66,26 @@ class ViewController: UIViewController {
         if timeLeft > 0 {
             timeLeft -= 1
             countDown.text = String(timeLeft)
+            timeLeftProgressBar.progressTintColor = UIColor.green
+            timeLeftProgressBar.progress = Float(timeLeft) / 60
+            
         } else {
+            
             timer.invalidate()
+            countDown.textColor = UIColor.red
+            wordToType.textColor = UIColor.red
             wordToType.text = "Game Over!"
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                self.wordToType.textColor = UIColor.green
+                self.wordToType.text = "Lets see how you did! :) "
+            }
+            
+            timeLeftProgressBar.progressTintColor = UIColor.red
+            timeLeftProgressBar.progress = 100.0
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                self.performSegue(withIdentifier: "showScoreSegue", sender: self)}
+            
         }
     }
     
@@ -75,24 +95,32 @@ class ViewController: UIViewController {
         timeLeft = 60
         correctWords = 0
         incorrectWords = 0
-        wordToType.text = ""
+        wordToType.text = "Press start to begin!"
         word.text = ""
         countDown.text = "60"
         
     }
     
     func checkWord() {
-        if word.text == wordToType.text {
-            correctWords += 1
-            wordToType.text = words.randomElement()
-            word.text = ""
-        } else {
-            incorrectWords += 1
-            //printContent("Incorrect!")
-            
-        }
-    }
-    
+
+                if word.text == wordToType.text {
+                    correctWords += 1
+                    word.backgroundColor = UIColor.green
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        self.word.backgroundColor = UIColor.white
+                    }
+                    wordToType.text = words.randomElement()
+                    word.text = ""
+                } else {
+                    incorrectWords += 1
+                    word.backgroundColor = UIColor.red
+                    //wait 1 second:
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        self.word.backgroundColor = UIColor.white
+                    }
+                }
+            }
+  
     
     func enterPressed() -> Bool {
         if word.text == "" {
@@ -110,16 +138,15 @@ class ViewController: UIViewController {
         
         wordsPerMinuteCalculator().self
         
-        //if enterpressed, check if word is correct
-        /*if enterPressed() {
-         checkWord()
-         }*/
-        
         checkWord()
         
         if timeLeft == 0 {
             timer.invalidate()
+            wordToType.textColor = UIColor.red
             wordToType.text = "Game Over!"
+            
+        } else {
+            wordToType.textColor = UIColor.blue
         }
     }
     
@@ -144,11 +171,7 @@ class ViewController: UIViewController {
         
         if let player = player {
             print("Spelarens namn: \(player.name), poäng: \(player.score)"
-            )
-            
-        }
-        
-        
+            )          
+        }     
     }
-    
 }
