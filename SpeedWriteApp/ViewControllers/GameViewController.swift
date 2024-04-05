@@ -53,10 +53,9 @@ class ViewController: UIViewController {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-           if segue.identifier == "toGameViewController", let gameVC = segue.destination as? ViewController {
-               if let playerName = nameTextField.text, !playerName.isEmpty {
-                   let newPlayer = Player(name: playerName)
-                   gameVC.playerName = playerName
+        if segue.identifier == "toGameViewController", let gameVC = segue.destination as? ViewController {
+            if let playerName = sender as? String {
+                gameVC.playerName = playerName
                }
            }
        }
