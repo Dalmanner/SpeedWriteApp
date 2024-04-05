@@ -9,22 +9,25 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var table: UITableView!
+    
 
-    @IBOutlet weak var wordToType: UILabel!
+    var player: Player?
     
     @IBOutlet weak var timeLeftProgressBar: UIProgressView!
     
+    @IBOutlet weak var wordToType: UILabel!
+
     @IBOutlet weak var restart: UINavigationItem!
-    
     @IBOutlet weak var countDown: UILabel!
-    
     @IBOutlet weak var word: UITextField!
     
     @IBAction func checkButton(_ sender: Any) {
         checkWord()
     }
     @IBAction func writeWord(_ sender: Any) {
-    
+        
         func textFieldShouldReturn(_ textField: UITextField) -> Bool {
             word.resignFirstResponder()
             return true
@@ -99,6 +102,7 @@ class ViewController: UIViewController {
     }
     
     func checkWord() {
+
                 if word.text == wordToType.text {
                     correctWords += 1
                     word.backgroundColor = UIColor.green
@@ -116,7 +120,7 @@ class ViewController: UIViewController {
                     }
                 }
             }
-    
+  
     
     func enterPressed() -> Bool {
         if word.text == "" {
@@ -145,7 +149,7 @@ class ViewController: UIViewController {
             wordToType.textColor = UIColor.blue
         }
     }
-
+    
     var timer = Timer()
     
     var timeLeft = 60
@@ -163,7 +167,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
         
+        if let player = player {
+            print("Spelarens namn: \(player.name), poäng: \(player.score)"
+            )          
+        }     
     }
 }
-
